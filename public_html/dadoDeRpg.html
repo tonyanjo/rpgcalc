@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HelloWorld</title>
+    <style>
+        body {
+            font: normal 12pt Arial;
+            background-color: rgb(107, 179, 221)
+        }
+        input {
+            font: bold 12pt Arial;
+            width: 80px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            }
+        div#resDado {
+            margin-top: 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>(HelloWorld) Rolagem com cálculo de bônus Automático</h1>
+    <p1><i>Bônus Base de Ataque</i></p1>
+    <input type="number" name="bba" id="bba"></br>
+    <p2><i>Dano da Arma</i></p2>
+    <input type="number" name="dano" id="dano"></br>
+    <p3><i>Lados do Dado</i></p3>
+    <input type="number" name="lados" id="lados"></br>
+    <input type="button" value="Calcular" onclick="resultado()">
+    <div id="resDado"><strong>Rolagem</strong></div></br>
+    <div id="calculo"><strong>Resultado Final</strong></div>
+
+    <script>
+        function resultado() {
+            let ladostxt = window.document.getElementById('lados')
+            let lados = Number(ladostxt.value)
+            let dado = function(){
+                return Math.ceil(Math.random()*`${lados}`)
+                }
+            let rolagem = dado()
+            let bbatxt = window.document.getElementById('bba')
+            let danotxt = window.document.getElementById('dano')
+            let bba = Number(bbatxt.value)
+            let dano = Number(danotxt.value)
+            let resDado = window.document.getElementById('resDado')
+            let calculo = window.document.getElementById('calculo')
+            let resultado = function(){
+                return bba + dano + rolagem
+                }
+            let resultadoFinal = resultado()
+            resDado.innerHTML = `O resultado da rolagem do <strong>d${lados}</strong> foi: <strong>${rolagem}</strong>`
+            calculo.innerHTML = `O resultado final com os bônus foi de: <strong>${Math.ceil(resultadoFinal)}</strong>`
+        }
+    </script>
+    
+</body>
+</html>

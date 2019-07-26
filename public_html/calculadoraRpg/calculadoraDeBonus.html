@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora de Bônus 1.1</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Bônus</h1>
+        <p1>Calcule seus bônus de acordo com seu personagem</p1>
+    </header>
+    <section>
+        <div class='wrapper'>
+            <label for= 'bba'> Bônus base de ataque:
+                <input type="number" name="bba" id="bba">
+            </label></br>
+            <label for= 'dano'> Dano da Arma: 
+                <input type="number" name="dano" id="dano">
+            </label></br>    
+            <label for= 'lados'> Lados do dados: 
+                <input type="number" name="lados" id="lados">
+            </label></br>
+            <label for="botao">
+                <input name='botao' id='botao' type="button" value="Calcular" onclick="resultado()">
+            </label> 
+        </div>
+           
+        <div id = 'resDado'>
+            
+        </div>
+        <div id = 'calculo'>
+            
+        </div>
+    </section>
+    <footer>
+        <p>&copy; TonyEstulano</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
